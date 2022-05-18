@@ -20,7 +20,7 @@ cleanbot_confirm = driver.find_element(by=By.CSS_SELECTOR, value='div.u_cbox_lay
 cleanbot_confirm.click()
 time.sleep(1)
 
-# 더보기 클릭
+# 더보기 계속 클릭
 while True:
     try:
         btn_more = driver.find_element(by=By.CSS_SELECTOR, value='a.u_cbox_btn_more')
