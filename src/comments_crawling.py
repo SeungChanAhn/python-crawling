@@ -2,12 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 #주소, 이후에 동적으로 할 것
-url = 'https://n.news.naver.com/mnews/ranking/article/comment/056/0011268381?sid=001'
+url = 'https://n.news.naver.com/mnews/ranking/article/056/0011268381?sid=001'
  
 #웹 드라이버
 driver = webdriver.Chrome()
 driver.implicitly_wait(30)
 driver.get(url)
+
+#댓글모음으로 이동
+move_comments = driver.find_element(by=By.CSS_SELECTOR, value='#comment_count')
+move_comments.click()
+time.sleep(1)
  
 #클린봇 클릭
 cleanbot = driver.find_element(by=By.CSS_SELECTOR, value='a.u_cbox_cleanbot_setbutton')
