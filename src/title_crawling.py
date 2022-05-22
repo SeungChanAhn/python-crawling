@@ -1,9 +1,11 @@
+from dataclasses import replace
 from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 import time
 import re
 import csv
+import urllib
 
 start = 1
 result_df = pd.DataFrame()
@@ -42,5 +44,6 @@ while True:
         print(start)
         break
 
-# csv파일로 저장하기.
-result_df.to_csv("/Users/chan/Desktop/test2.csv", header=True, index=True)
+# 경로설정, csv파일로 저장하기.
+result_df.to_csv("/Users/chan/Desktop/test3.csv", header=False, index=False, encoding="utf-8-sig")
+
